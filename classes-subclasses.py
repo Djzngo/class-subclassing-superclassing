@@ -29,6 +29,20 @@ class Game(Items):
     def describe(self):
         return f"Name: {self.name}, Platform: {self.platform}, Price: £{self.price}, Quantity: {self.quantity}, Total value: £{self.value()}"
 
+class Clothing(Items):
+    """
+    Creates an instance of a clothing item.
+    """
+    #Instance attributes
+    def __init__(self, name, price, quantity, category, size):
+        #Superclass (Items)
+        super().__init__(name, price, quantity)
+        self.category = category
+        self.size = size
+
+    def desscribe(self):
+        return f""
+
 game_one = Game("Nubby's Number Factory", 4.29, 250, "PC")
 
 print(game_one.describe())

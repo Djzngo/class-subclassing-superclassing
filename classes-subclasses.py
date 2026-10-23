@@ -1,7 +1,6 @@
 """
 This program is an example of the use of classes within Python.
 """
-
 class Items():
     """
     Creates an instance of items. 
@@ -16,6 +15,20 @@ class Items():
     def value(self):
         return self.price * self.quantity
 
-test = Items("test", 2, 4)
+class Game(Items):
+    """
+    Creates an instance of a game item.
+    """
+    #Instance attributes
+    def __init__(self, name, price, quantity, platform):
+        #Superclass (Items)
+        super().__init__(name, price, quantity)
+        self.platform = platform
 
-print(test.name)
+    #Returns a description of the game item.
+    def describe(self):
+        return f"Name: {self.name}, Platform: {self.platform}, Price: £{self.price}, Quantity: {self.quantity}, Total value: £{self.value()}"
+
+game_one = Game("Nubby's Number Factory", 4.29, 250, "PC")
+
+print(game_one.describe())

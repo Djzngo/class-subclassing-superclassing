@@ -40,9 +40,12 @@ class Clothing(Items):
         self.category = category
         self.size = size
 
-    def desscribe(self):
-        return f""
+    def describe(self):
+        return f"Name: {self.name}, Category: {self.category}, Size: {self.size}, Price: £{self.price}, Quantity: {self.quantity}, Total value: £{self.value()}"
 
 game_one = Game("Nubby's Number Factory", 4.29, 250, "PC")
 
+clothing_one = Clothing("Goku T-shirt", 24.99, 25, "T-shirts", "Large")
+
 print(game_one.describe())
+print(clothing_one.describe())
